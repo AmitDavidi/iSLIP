@@ -62,3 +62,75 @@ The code includes several functions:
 ## Log File
 
 The code generates a log file named `<r>.log.txt`, where `<r>` is the run ID provided as a command-line argument. The
+
+
+## README - Traffic Generator
+
+This code is a simple program written in C that generates and outputs packets for a network simulation. The packets are randomly generated and assigned source and destination ports based on certain probabilities.
+
+### Code Structure
+
+The code consists of several functions and a `main` function. Here's an overview of each component:
+
+#### `rollUniform` Function
+
+```c
+double rollUniform()
+```
+
+This function generates a random number between 0 and 1 using the `rand` function and divides it by `RAND_MAX` to obtain a uniform distribution.
+
+#### `rollPortNum` Function
+
+```c
+int rollPortNum(int d_flag, int N, int arrival_port)
+```
+
+This function determines the output port for a packet based on the provided parameters. If the `d_flag` is set (non-zero), it calculates the output port based on a probability. Otherwise, it generates a random output port.
+
+#### `main` Function
+
+```c
+int main(int argc, char** argv)
+```
+
+The `main` function is the entry point of the program. It parses command-line arguments, initializes variables, sets up the random seed, and generates and outputs packets based on the specified parameters. It also handles error checking for incorrect command-line usage.
+
+### Usage
+
+To compile and run the code, use the following command:
+
+```
+gcc -o traffic_generator traffic_generator.c
+./traffic_generator tr_gen N T seed p [-d]
+```
+
+Replace `N`, `T`, `seed`, and `p` with the desired values for the simulation. The additional optional `-d` flag can be used to enable a specific behavior for calculating the output port.
+
+### Command-line Arguments
+
+The program expects either 5 or 6 command-line arguments, as follows:
+
+```
+tr_gen N T seed p [-d]
+```
+
+- `N`: The number of ports in the network.
+- `T`: The number of time steps for the simulation.
+- `seed`: The seed value for the random number generator.
+- `p`: The probability of a packet arriving at a port.
+- `-d` (optional): Enables a specific behavior for calculating the output port. If present, the program will use a probability-based calculation; otherwise, it will use a uniform random selection.
+
+If the provided command-line arguments are incorrect, an error message will be displayed.
+
+### Packet Generation
+
+The program generates packets based on the specified parameters. For each time step (`t`) from 1 to `T`, it iterates over each port (`port`) from 1 to `N`. If the randomly generated value from `rollUniform` is less than `p`, a packet is considered to have arrived at the current port. The program then calls `rollPortNum` to determine the destination port (`dest_port`) based on the probability flag and the current port.
+
+Finally, the program outputs the packet information in the format: `<time step> <source port> <destination port>`.
+
+
+
+
+
+
