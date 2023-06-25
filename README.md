@@ -15,7 +15,7 @@ gcc -o islip_scheduler islip_scheduler.c
 The compiled program can be run with the following command:
 
 ```
-input_packets.txt > ./islip_scheduler <N> <k> <r> < input_packets.txt
+input_packets.txt > ./islip_scheduler <N> <k> <r> > out_script.txt
 ```
 
 - `<N>`: The number of ports in the network.
