@@ -101,8 +101,8 @@ The `main` function is the entry point of the program. It parses command-line ar
 To compile and run the code, use the following command:
 
 ```
-gcc -o traffic_generator traffic_generator.c
-./tr_gen N T seed p [-d]
+gcc -o tr_gen tr_gen.c
+./tr_gen N T seed p [-d] > input_packets.txt
 ```
 
 Replace `N`, `T`, `seed`, and `p` with the desired values for the simulation. The additional optional `-d` flag can be used to enable a specific behavior for calculating the output port.
