@@ -63,7 +63,7 @@ The code includes several functions:
 
 The code generates a log file named `<r>.log.txt`, where `<r>` is the run ID provided as a command-line argument. The
 
-
+________________________
 ## README - Traffic Generator
 
 This code is a simple program written in C that generates and outputs packets for a network simulation. The packets are randomly generated and assigned source and destination ports based on certain probabilities.
