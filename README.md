@@ -7,7 +7,7 @@ This code implements an iSLIP packet scheduler. The iSLIP algorithm is a widely 
 To compile the code, use a C compiler with the following command:
 
 ```
-gcc -o islip_scheduler islip_scheduler.c
+gcc -o islip islip.c
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ gcc -o islip_scheduler islip_scheduler.c
 The compiled program can be run with the following command:
 
 ```
-input_packets.txt > ./islip_scheduler <N> <k> <r> > out_script.txt
+input_packets.txt > ./islip <N> <k> <r> > out_script.txt
 ```
 
 - `<N>`: The number of ports in the network.
@@ -102,7 +102,7 @@ To compile and run the code, use the following command:
 
 ```
 gcc -o traffic_generator traffic_generator.c
-./traffic_generator tr_gen N T seed p [-d]
+./tr_gen N T seed p [-d]
 ```
 
 Replace `N`, `T`, `seed`, and `p` with the desired values for the simulation. The additional optional `-d` flag can be used to enable a specific behavior for calculating the output port.
