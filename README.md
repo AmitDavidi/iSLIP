@@ -15,13 +15,13 @@ gcc -o islip_scheduler islip_scheduler.c
 The compiled program can be run with the following command:
 
 ```
-./islip_scheduler <N> <k> <r> < input_packets.txt
+input_packets.txt > ./islip_scheduler <N> <k> <r> < input_packets.txt
 ```
 
 - `<N>`: The number of ports in the network.
 - `<k>`: The number of iterations the iSLIP algorithm will run.
 - `<r>`: The run ID, used to generate a log file (`<r>.log.txt`) that contains the state of the buffers at each time step.
-- `<input_packets.txt>`: A file containing the input packets, where each line represents a packet with the format `<time> <arrivalPort> <destinationPort>`. The packets should be sorted by their arrival time.
+- `stdin`: the programs expects an input containing the packets, where each line represents a packet with the format `<time> <arrivalPort> <destinationPort>`. The packets should be sorted by their arrival time.
 
 ## Algorithm
 
